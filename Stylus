@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html id="stylus" class="firefox newUI" lang="en-CA" style="--header-width: 280px; --columns: 1; --name-width: 17ch; --size-width: 2ch;" data-ui-theme="light"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stylus</title>
+  <link href="moz-extension://5b641f47-1544-4db8-b190-180b7865edc4/css/icons.ttf" rel="preload" as="font" crossorigin="anonymous">
+  <link href="Stylus_files/global.css" rel="stylesheet">
+  <link href="Stylus_files/global-dark.css" rel="stylesheet">
+
+  <template data-id="style">
+    <div class="entry">
+      <h2 class="style-name">
+        <a class="style-name-link">
+          &nbsp;
+          <span class="style-info" data-type="version"></span>
+        </a>
+        <a target="_blank" class="homepage icon"><i class="i-external"></i></a>
+      </h2>
+      <p class="applies-to">
+        <span class="style-info" data-type="age"></span>.
+        <label i18n="genericSize">:</label><span class="style-info" data-type="size"></span>.
+        <label i18n="appliesDisplay"></label>
+        <span class="targets"></span>
+      </p>
+      <p class="actions">
+        <a class="style-edit-link">
+          <button i18n="editStyleLabel" tabindex="-1"></button>
+        </a>
+        <button class="enable" i18n="enableStyleLabel"></button>
+        <button class="disable" i18n="disableStyleLabel"></button>
+        <button class="delete" i18n="deleteStyleLabel"></button>
+        <button class="check-update" i18n="checkForUpdate"></button>
+        <button class="update" i18n="installUpdate" hidden=""></button>
+        <button class="configure-usercss" i18n="configureStyle"></button>
+        <span class="update-note"></span>
+      </p>
+    </div>
+  </template>
+
+  <template data-id="styleNewUI"><div class="entry"><h2 class="style-name"><input type="checkbox" title="Toggle style"><a class="style-name-link">
+          &nbsp;
+          <span class="style-info" data-type="version"></span></a><a target="_blank" class="homepage icon" tabindex="0"><i class="i-external"></i></a></h2><p class="actions"><a class="delete" tabindex="0" title="Delete"><i class="i-close"></i></a></p><p class="style-info" data-type="size"></p><p class="style-info" data-type="age"></p><div class="applies-to"><a class="expander" tabindex="0"><i>▼</i></a><div class="targets"></div></div></div></template>
+
+  <template data-id="configureIcon">
+    <a class="configure-usercss" i18n="title:configureStyle" tabindex="0">
+      <i class="i-config"></i>
+    </a>
+  </template>
+
+  <template data-id="updaterIcons">
+    <span class="updater-icons">
+      <a class="check-update" i18n="title:checkForUpdate" tabindex="0">
+        <i class="i-update-check"></i>
+      </a>
+      <a class="update" i18n="title:installUpdate" tabindex="0">
+        <i class="i-install"></i>
+      </a>
+      <span class="up-to-date" i18n="title:updateCheckSucceededNoUpdate">
+        <i class="i-check1"></i>
+      </span>
+      <span class="updated" i18n="title:updateCompleted">
+        <i class="i-check2"></i>
+      </span>
+      <span class="update-note"></span>
+    </span>
+  </template>
+
+  <template data-id="appliesToTarget">
+    <span class="target"></span>
+  </template>
+
+  <template data-id="appliesToSeparator">
+    <span class="sep">, </span>
+  </template>
+
+  <template data-id="appliesToEverything"><span class="target">Everything</span></template>
+
+  <template data-id="extraAppliesTo">
+    <details class="applies-to-extra">
+      <summary class="applies-to-extra-expander" i18n="appliesDisplayTruncatedSuffix"></summary>
+    </details>
+  </template>
+
+  <script src="Stylus_files/style-injector.js"></script>
+  <script src="Stylus_files/browser.js"></script>
+  <script src="Stylus_files/toolbox.js"></script>
+  <script src="Stylus_files/msg.js"></script>
+  <script src="Stylus_files/prefs.js"></script>
+  <script src="Stylus_files/dom.js"></script>
+  <script src="Stylus_files/localization.js"></script>
+  <script src="Stylus_files/router.js"></script>
+  <script src="Stylus_files/apply.js"></script>
+
+  <script src="Stylus_files/events.js"></script>
+  <script src="Stylus_files/filters.js"></script>
+  <script src="Stylus_files/render.js"></script>
+  <script src="Stylus_files/sorter.js"></script>
+
+<template data-id="body"></template>
+
+<link rel="stylesheet" href="Stylus_files/manage.css">
+<link rel="stylesheet" href="Stylus_files/manage-newui.css" id="newUI" media="">
+<script src="Stylus_files/themer.js"></script><link rel="icon" href="moz-extension://5b641f47-1544-4db8-b190-180b7865edc4/images/icon/light/32.png" sizes="32x32"><link rel="icon" href="moz-extension://5b641f47-1544-4db8-b190-180b7865edc4/images/icon/light/16.png" sizes="16x16"> <!-- must be last in HEAD to avoid FOUC -->
+<script src="Stylus_files/dom-on-load.js"></script><script src="Stylus_files/import-export.js"></script><script src="Stylus_files/incremental-search.js"></script><script src="Stylus_files/header-resizer.js"></script><script src="Stylus_files/message-box.js"></script><link href="Stylus_files/message-box.css" rel="stylesheet"></head>
+
+<body id="stylus-manage" dragndrop-hint="Drop your backup file anywhere on this page to import." class="">
+<script src="Stylus_files/manage.js"></script><div id="header"><h1 id="manage-heading">Installed Styles</h1><label id="disableAll-label" data-on="Turn all styles off" data-off="Styles are turned off"><input id="disableAll" type="checkbox"></label><div id="manage-settings"><div class="settings-column"><details id="filters" data-pref="manage.filters.expanded" open=""><summary class="active"><h2>Filters:
+            <div class="filter-stats-wrapper"><span id="filters-stats">1 shown of 1 total</span><a id="reset-filters" tabindex="0"><i class="i-close"></i></a></div></h2></summary><div class="filter-selection"><label><input id="manage.onlyEnabled" type="checkbox" data-filter=".enabled" data-filter-hide=".disabled" data-focused-via-click="" checked="checked"></label><div class="select-wrapper"><select id="manage.onlyEnabled.invert" class="fit-width" style="" data-focused-via-click=""><option value="false" selected="selected">Only enabled styles</option></select></div></div><div class="filter-selection"><label><input id="manage.onlyLocal" type="checkbox" data-filter=":not(.updatable):not(.update-done)" data-filter-hide=".updatable, .update-done"></label><div class="select-wrapper"><select id="manage.onlyLocal.invert" class="fit-width" title="(the styles not installed through a userstyles.org page)"><option value="false" selected="selected">Only locally created styles</option></select></div></div><div class="filter-selection"><label><input id="manage.onlyUsercss" type="checkbox" data-filter=".usercss" data-filter-hide=":not(.usercss)"></label><div class="select-wrapper"><select id="manage.onlyUsercss.invert" class="fit-width"><option value="false" selected="selected">Only UserCSS styles</option></select></div></div><div class="filter-selection"><label id="only-updates" class="hidden"><input type="checkbox" data-filter=".can-update, .update-problem, .update-done" data-filter-hide=":not(.updatable):not(.update-done),
+                                     .no-update:not(.update-problem),
+                                     .updatable:not(.can-update):not(.update-problem):not(.update-done)"><span>Only with updates or issues</span></label></div><div id="search-wrapper"><input id="search" type="search" spellcheck="false" data-filter=":not(.not-matching)" data-filter-hide=".not-matching" placeholder="Search"><div class="select-wrapper"><select id="manage.searchMode" class="fit-width"><option value="meta" selected="selected">Metadata</option></select></div><a id="search-help" tabindex="0"><i class="i-info"></i></a></div></details><div id="sort-wrapper"><div class="select-wrapper" title="Select a sort to apply to the installed styles"><select id="manage.newUI.sort"><optgroup label="Title Ascending"><option value="title,asc" selected="selected">Title</option><option value="dateInstalled,desc, title,asc">Date installed (newest first) + Title</option><option value="dateInstalled,asc, title,asc">Date installed (oldest first) + Title</option><option value="dateUpdated,desc, title,asc">Date updated (newest first) + Title</option><option value="dateUpdated,asc, title,asc">Date updated (oldest first) + Title</option><option value="usercss,asc, title,asc">Usercss + Title</option><option value="usercss,desc, title,asc">Usercss 🠇 + Title</option><option value="disabled,asc, title,asc">Disabled + Title</option><option value="disabled,desc, title,asc">Enabled + Title</option><option value="disabled,desc, usercss,asc, title,asc">Enabled + Usercss + Title</option><option value="size,desc, title,asc">Size 🠇 + Title</option></optgroup><optgroup label="Title Descending"><option value="title,desc">Title 🠇</option><option value="usercss,asc, title,desc">Usercss + Title 🠇</option><option value="usercss,desc, title,desc">Usercss 🠇 + Title 🠇</option><option value="disabled,desc, title,desc">Enabled + Title 🠇</option><option value="disabled,desc, usercss,asc, title,desc">Enabled + Usercss + Title 🠇</option></optgroup></select></div><a id="sorter-help" tabindex="0"><i class="i-info"></i></a></div></div><div class="settings-column"><details id="actions" data-pref="manage.actions.expanded" open=""><summary><h2>Actions</h2></summary><div id="update-check"><button id="check-all-updates" title="">Check all styles for updates<span id="update-progress"></span></button><a id="update-history-button" tabindex="0" title="History"><i class="i-log"></i></a></div><div id="update-all"><button id="apply-all-updates" class="hidden">Apply all updates</button><span id="update-all-no-updates" class="hidden">No updates found.</span><button id="check-all-updates-force" class="hidden">Check again, I didn't edit any styles!</button></div><div id="add-style-wrapper"><a href="moz-extension://5b641f47-1544-4db8-b190-180b7865edc4/edit.html" class="ellipsis" data-focused-via-click=""><button id="add-style-label" tabindex="-1">Write new style</button></a><label id="add-style-as-usercss-wrapper" title="Write new style as UserCSS"><input type="checkbox" id="newStyleAsUsercss"><i class="i-usercss"></i><a id="usercss-wiki" class="icon" href="https://github.com/openstyles/stylus/wiki/Usercss" title="Documentation for UserCSS"><i class="i-external"></i></a></label></div><button id="manage-options-button" data-focused-via-click="">Options</button><button id="injection-order-button" class="icon" title="Style injection order"><i class="i-reorder"></i></button></details></div><div class="settings-column"><details id="backup" data-pref="manage.backup.expanded" open=""><summary><h2 id="backup-title">Backup<a tabindex="0" data-cmd="note" title="To import the backup file, drag'n'drop it into this page or click the Import button.
+
+To export a compatible backup for Stylus older than 1.5.18,
+right-click or shift-click the Export button." data-focused-via-click=""><i class="i-info"></i></a></h2></summary><div id="backup-buttons"><div class="split-btn"><button id="file-all-styles">Export</button><button class="split-btn-pedal" menu-compat="Export (compatible mode)" data-focused-via-click=""></button></div><button id="unfile-all-styles">Import</button><button id="sync-styles">Sync to cloud</button></div></details><div id="manage-text"><span><a href="https://userstyles.world/explore" target="_blank">Get and share styles</a><a tabindex="0" data-cmd="note" title="The new community-driven userstyles.world site is created by userstyle
+authors in order to replace userstyles.org,
+which has been so slow and unresponsive for the past year that
+many authors stopped updating their styles."><i class="i-info"></i></a></span><span><a href="https://uso.kkx.one/browse/styles" target="_blank">Get styles</a><a tabindex="0" data-cmd="note" title="This archive site was created by a userstyle community member to back up
+the slow and unresponsive userstyles.org.
+The archive updates its contents approximately once a day."><i class="i-info"></i></a></span><span><a href="https://add0n.com/stylus.html#features" target="_blank">Get help</a></span><span><a href="https://github.com/openstyles/stylus/wiki" target="_blank">Wiki</a></span><span><a href="https://www.transifex.com/github-7/Stylus" target="_blank">Translate</a></span></div></div></div><div id="header-resizer" title="Hold Shift to resize only in this type of UI, i.e. editor,
+manager, installer"></div></div><div id="installed" class="has-favicons has-targets" data-total="3"><div class="entry global even enabled" id="style-1" style="--num-targets: 0;"><h2 class="style-name" title=""><input type="checkbox" title="Toggle style" data-focused-via-click="" checked="checked"><a class="style-name-link" href="moz-extension://5b641f47-1544-4db8-b190-180b7865edc4/edit.html?id=1" title="6.4 months ago
+Date installed: Dec 14, 2023, 4:31 p.m.
+Date updated: Dec 14, 2023, 4:31 p.m.">Text Spacing<span class="style-info" data-type="version" data-value=""></span></a><a target="_blank" class="homepage icon" tabindex="0" title="" href=""><i class="i-external"></i></a></h2><p class="actions"><a class="delete" tabindex="0" title="Delete"><i class="i-close"></i></a></p><p class="style-info" data-type="size" data-value="2" title="Size: 352 B">0k</p><p class="style-info" data-type="age" data-value=" 6m" title="6.4 months ago
+Date installed: Dec 14, 2023, 4:31 p.m.
+Date updated: Dec 14, 2023, 4:31 p.m.">6m</p><div class="applies-to"><a class="expander" tabindex="0"><i>▼</i></a><div class="targets"><span class="target"><b></b>Everything</span></div></div></div></div>
+<script src="Stylus_files/updater-ui.js"></script>
+
+
+<textarea id="incremental-search" spellcheck="false" tabindex="-1" style="opacity: 0 !important;"></textarea></body></html>
